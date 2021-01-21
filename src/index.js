@@ -71,6 +71,7 @@ const ASSET_SNOW = "assets/pic_snow.png";
 // const ASSET_3DMODEL = "assets/buster_drone/scene.gltf";
 // const ASSET_3DMODEL = "assets/milk_truck/CesiumMilkTruck.gltf";
 const ASSET_3DMODEL = "assets/CesiumMan/CesiumMan.gltf";
+// const ASSET_3DMODEL = "assets/Duck/Duck.gltf";
 
 // snow property
 const ROTATE_LEFT = 1;
