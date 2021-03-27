@@ -173,8 +173,10 @@ function onAssetsLoaded(loader, res) {
 		app.renderer, dirLight, 512, 15, 1, PIXI3D.ShadowQuality.medium);
 
 	let pipeline = PIXI3D.StandardPipeline.from(app.renderer);
-	pipeline.shadowRenderPass.lights.push(shadowCastingLight);
-	pipeline.shadowRenderPass.enableShadows(model, shadowCastingLight);
+	// v5 pipeline.shadowRenderPass.lights.push(shadowCastingLight);
+	// v5 pipeline.shadowRenderPass.enableShadows(model, shadowCastingLight);
+	// v6
+	pipeline.enableShadows(model, shadowCastingLight);
 
 	// camera
 	let control = new PIXI3D.CameraOrbitControl(app.view);
