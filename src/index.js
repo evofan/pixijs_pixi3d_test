@@ -91,6 +91,9 @@ let accelNums = [];
 
 let model;
 
+let text1;
+let text2;
+
 // v5 loader
 const loader = PIXI.Loader.shared;
 
@@ -105,6 +108,23 @@ app.loader.load((loader, resources) => {
 */
 
 loader.load((loader, resources) => onAssetsLoaded(loader, resources));
+
+// Text1
+text1 = new PIXI.Text(`Loading asset data ....`, {
+	fontFamily: "Arial",
+	fontSize: 10,
+	fill: 0xf0fff0,
+	align: "left",
+	fontWeight: "bold",
+	stroke: "#000000",
+	strokeThickness: 4,
+	dropShadow: false,
+	dropShadowColor: "#666666",
+	lineJoin: "round"
+});
+container.addChild(text1);
+text1.x = 10;
+text1.y = 10;
 
 /**
  * Asset load Complete
@@ -156,6 +176,23 @@ function onAssetsLoaded(loader, res) {
 	model.scale.set(2);
 	model.rotationQuaternion.setEulerAngles(0, 25, 0);
 
+	// Text2
+	text2 = new PIXI.Text(`Setting 3D model ....`, {
+		fontFamily: "Arial",
+		fontSize: 10,
+		fill: 0xf0fff0,
+		align: "left",
+		fontWeight: "bold",
+		stroke: "#000000",
+		strokeThickness: 4,
+		dropShadow: false,
+		dropShadowColor: "#666666",
+		lineJoin: "round"
+	});
+	container.addChild(text2);
+	text2.x = 10;
+	text2.y = 30;
+
 	// Light、これを設定しないとモデルが真っ黒のまま
 	let dirLight = Object.assign(new PIXI3D.Light(), {
 		type: "directional", intensity: 0.5, x: -4, y: 7, z: -4
@@ -184,6 +221,9 @@ function onAssetsLoaded(loader, res) {
 	// anime
 	model.animations[0].play();
 	model.animations[0].loop = true;
+
+	container.removeChild(text1);
+	container.removeChild(text2);
 
 	// Snow
 	for (let i = 0; i < MAX_NUM; i++) {
