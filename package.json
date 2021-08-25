@@ -1,15 +1,15 @@
 {
-  "name": "pixijs_script_anime_v5ver",
+  "name": "pixijs_pixi3d_test",
   "version": "1.0.0",
-  "description": "**DEMO**   [https://evofan.github.io/pixijs_script_anime_v5/](https://evofan.github.io/pixijs_script_anime_v5/)",
-  "main": "src/index.js",
+  "description": "**DEMO**   [https://evofan.github.io/pixijs_pixi3d_test/dist/](https://evofan.github.io/pixijs_pixi3d_test/dist/)",
+  "main": "webpack.config.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "watch": "webpack --watch"
   },
   "keywords": [],
   "author": "",
