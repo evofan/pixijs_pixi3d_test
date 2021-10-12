@@ -133,6 +133,21 @@ object-assign
  */
 
 /*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+/*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License. You may obtain a copy of the
@@ -147,4 +162,916 @@ See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
 
+/*! ../../animation */
+
+/*! ../../camera/camera */
+
+/*! ../../capabilities */
+
+/*! ../../color */
+
+/*! ../../console */
+
+/*! ../../gltf/gltf-material */
+
+/*! ../../lighting/light-type */
+
+/*! ../../lighting/lighting-environment */
+
+/*! ../../math/quat */
+
+/*! ../../mesh/mesh-shader */
+
+/*! ../../resource/buffer-resource */
+
+/*! ../../texture/texture-transform */
+
+/*! ../camera/camera */
+
+/*! ../capabilities */
+
+/*! ../color */
+
+/*! ../container */
+
+/*! ../cubemap/cubemap */
+
+/*! ../gltf/gltf-asset */
+
+/*! ../lighting/light-type */
+
+/*! ../material */
+
+/*! ../material-render-sort-type */
+
+/*! ../material/material */
+
+/*! ../material/material-render-sort-type */
+
+/*! ../material/standard/standard-material */
+
+/*! ../material/standard/standard-material-matrix-texture */
+
+/*! ../material/standard/standard-shader-source */
+
+/*! ../math/mat3 */
+
+/*! ../math/mat4 */
+
+/*! ../math/quat */
+
+/*! ../math/ray */
+
+/*! ../math/vec3 */
+
+/*! ../math/vec4 */
+
+/*! ../mesh/geometry/mesh-geometry */
+
+/*! ../mesh/mesh */
+
+/*! ../mesh/mesh-shader */
+
+/*! ../model */
+
+/*! ../resource/array-resource */
+
+/*! ../resource/base-image-resource */
+
+/*! ../resource/buffer-resource */
+
+/*! ../resource/cube-resource */
+
+/*! ../shadow/shadow-render-pass */
+
+/*! ../skinning/joint */
+
+/*! ../skinning/skin */
+
+/*! ../sprite/post-processing-sprite */
+
+/*! ../transform/matrix-component */
+
+/*! ../transform/matrix4 */
+
+/*! ../transform/observable-point */
+
+/*! ./animation */
+
+/*! ./animation/gltf-animation */
+
+/*! ./animation/gltf-channel */
+
+/*! ./assets/lut-ggx.png */
+
+/*! ./camera */
+
+/*! ./camera/camera */
+
+/*! ./camera/camera-orbit-control */
+
+/*! ./color */
+
+/*! ./common.js */
+
+/*! ./container */
+
+/*! ./cubemap-resource */
+
+/*! ./cubemap/cubemap */
+
+/*! ./cubemap/cubemap-resource */
+
+/*! ./geometry/cube-geometry */
+
+/*! ./geometry/plane-geometry */
+
+/*! ./geometry/quad-geometry */
+
+/*! ./gltf-attribute */
+
+/*! ./gltf-channel */
+
+/*! ./gltf-cubic-spline */
+
+/*! ./gltf-interpolation */
+
+/*! ./gltf-linear */
+
+/*! ./gltf-material */
+
+/*! ./gltf-rotation */
+
+/*! ./gltf-scale */
+
+/*! ./gltf-spherical-linear */
+
+/*! ./gltf-step */
+
+/*! ./gltf-translation */
+
+/*! ./gltf-weights */
+
+/*! ./gltf/gltf-asset */
+
+/*! ./gltf/gltf-parser */
+
+/*! ./instanced-mesh */
+
+/*! ./instanced-model */
+
+/*! ./instanced-standard-material */
+
+/*! ./light-type */
+
+/*! ./lighting/image-based-lighting */
+
+/*! ./lighting/light */
+
+/*! ./lighting/light-type */
+
+/*! ./lighting/lighting-environment */
+
+/*! ./loader/cubemap-loader */
+
+/*! ./loader/gltf-binary-loader */
+
+/*! ./loader/gltf-loader */
+
+/*! ./loader/shader-source-loader */
+
+/*! ./mat2.js */
+
+/*! ./mat2d.js */
+
+/*! ./mat3.js */
+
+/*! ./mat4.js */
+
+/*! ./material-render-pass */
+
+/*! ./material-render-sort-type */
+
+/*! ./material/material */
+
+/*! ./material/material-render-sort-type */
+
+/*! ./material/standard/instanced-standard-material */
+
+/*! ./material/standard/standard-material */
+
+/*! ./material/standard/standard-material-alpha-mode */
+
+/*! ./material/standard/standard-material-debug-mode */
+
+/*! ./material/standard/standard-material-normal-texture */
+
+/*! ./material/standard/standard-material-occlusion-texture */
+
+/*! ./material/standard/standard-material-texture */
+
+/*! ./math/mat4 */
+
+/*! ./math/plane */
+
+/*! ./math/quat */
+
+/*! ./math/ray */
+
+/*! ./math/vec3 */
+
+/*! ./matrix-component */
+
+/*! ./matrix4 */
+
+/*! ./mesh-geometry */
+
+/*! ./mesh/geometry/mesh-geometry */
+
+/*! ./mesh/mesh */
+
+/*! ./mesh/mesh-shader */
+
+/*! ./mipmap-resource */
+
+/*! ./model */
+
+/*! ./observable-point */
+
+/*! ./observable-quaternion */
+
+/*! ./picking-id */
+
+/*! ./picking-map */
+
+/*! ./picking/picking-hitarea */
+
+/*! ./picking/picking-interaction */
+
+/*! ./pipeline/material-render-pass */
+
+/*! ./pipeline/standard-pipeline */
+
+/*! ./projection-sprite */
+
+/*! ./quat.js */
+
+/*! ./quat2.js */
+
+/*! ./shader/gaussian-blur.frag */
+
+/*! ./shader/gaussian-blur.vert */
+
+/*! ./shader/metallic-roughness.frag */
+
+/*! ./shader/picking.frag */
+
+/*! ./shader/picking.vert */
+
+/*! ./shader/primitive.vert */
+
+/*! ./shader/shadow.frag */
+
+/*! ./shader/shadow.vert */
+
+/*! ./shader/skybox.frag */
+
+/*! ./shader/skybox.vert */
+
+/*! ./shader/sprite.frag */
+
+/*! ./shader/sprite.vert */
+
+/*! ./shadow-filter */
+
+/*! ./shadow-math */
+
+/*! ./shadow-quality */
+
+/*! ./shadow-renderer */
+
+/*! ./shadow-shader */
+
+/*! ./shadow-texture */
+
+/*! ./shadow/shadow-casting-light */
+
+/*! ./shadow/shadow-quality */
+
+/*! ./shadow/shadow-render-pass */
+
+/*! ./skinning-shader */
+
+/*! ./skinning/joint */
+
+/*! ./skinning/skin */
+
+/*! ./skybox-material */
+
+/*! ./skybox/skybox */
+
+/*! ./sprite-batch-geometry */
+
+/*! ./sprite-billboard-type */
+
+/*! ./sprite/post-processing-sprite */
+
+/*! ./sprite/sprite */
+
+/*! ./sprite/sprite-batch-renderer */
+
+/*! ./sprite/sprite-billboard-type */
+
+/*! ./standard-material */
+
+/*! ./standard-material-alpha-mode */
+
+/*! ./standard-material-debug-mode */
+
+/*! ./standard-material-factory */
+
+/*! ./standard-material-feature-set */
+
+/*! ./standard-material-matrix-texture */
+
+/*! ./standard-material-normal-texture */
+
+/*! ./standard-material-occlusion-texture */
+
+/*! ./standard-material-skin-uniforms */
+
+/*! ./standard-material-texture */
+
+/*! ./standard-shader */
+
+/*! ./standard-shader-instancing */
+
+/*! ./standard-shader-source */
+
+/*! ./texture-shader */
+
+/*! ./texture/texture-transform */
+
+/*! ./transform/matrix4 */
+
+/*! ./transform/observable-point */
+
+/*! ./transform/observable-quaternion */
+
+/*! ./transform/transform */
+
+/*! ./vec2.js */
+
+/*! ./vec3 */
+
+/*! ./vec3.js */
+
+/*! ./vec4.js */
+
+/*! exports provided: EPSILON, ARRAY_TYPE, RANDOM, setMatrixArrayType, toRadian, equals */
+
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __spreadArray, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+
+/*! exports provided: create, clone, copy, fromValues, set, identity, transpose, invert, adjoint, determinant, multiply, translate, scale, rotate, rotateX, rotateY, rotateZ, fromTranslation, fromScaling, fromRotation, fromXRotation, fromYRotation, fromZRotation, fromRotationTranslation, fromQuat2, getTranslation, getScaling, getRotation, fromRotationTranslationScale, fromRotationTranslationScaleOrigin, fromQuat, frustum, perspective, perspectiveFromFieldOfView, ortho, lookAt, targetTo, str, frob, add, subtract, multiplyScalar, multiplyScalarAndAdd, exactEquals, equals, mul, sub */
+
+/*! exports provided: create, clone, copy, identity, fromValues, set, invert, determinant, multiply, rotate, scale, translate, fromRotation, fromScaling, fromTranslation, str, frob, add, subtract, multiplyScalar, multiplyScalarAndAdd, exactEquals, equals, mul, sub */
+
+/*! exports provided: create, clone, copy, identity, fromValues, set, transpose, invert, adjoint, determinant, multiply, rotate, scale, fromRotation, fromScaling, str, frob, LDU, add, subtract, exactEquals, equals, multiplyScalar, multiplyScalarAndAdd, mul, sub */
+
+/*! exports provided: create, clone, fromValues, copy, set, add, subtract, multiply, divide, ceil, floor, min, max, round, scale, scaleAndAdd, distance, squaredDistance, length, squaredLength, negate, inverse, normalize, dot, cross, lerp, random, transformMat2, transformMat2d, transformMat3, transformMat4, rotate, angle, zero, str, exactEquals, equals, len, sub, mul, div, dist, sqrDist, sqrLen, forEach */
+
+/*! exports provided: create, clone, fromValues, copy, set, add, subtract, multiply, divide, ceil, floor, min, max, round, scale, scaleAndAdd, distance, squaredDistance, length, squaredLength, negate, inverse, normalize, dot, cross, lerp, random, transformMat4, transformQuat, zero, str, exactEquals, equals, sub, mul, div, dist, sqrDist, len, sqrLen, forEach */
+
+/*! exports provided: create, clone, fromValues, fromRotationTranslationValues, fromRotationTranslation, fromTranslation, fromRotation, fromMat4, copy, identity, set, getReal, getDual, setReal, setDual, getTranslation, translate, rotateX, rotateY, rotateZ, rotateByQuatAppend, rotateByQuatPrepend, rotateAroundAxis, add, multiply, mul, scale, dot, lerp, invert, conjugate, length, len, squaredLength, sqrLen, normalize, str, exactEquals, equals */
+
+/*! exports provided: create, clone, length, fromValues, copy, set, add, subtract, multiply, divide, ceil, floor, min, max, round, scale, scaleAndAdd, distance, squaredDistance, squaredLength, negate, inverse, normalize, dot, cross, lerp, hermite, bezier, random, transformMat4, transformMat3, transformQuat, rotateX, rotateY, rotateZ, angle, zero, str, exactEquals, equals, sub, mul, div, dist, sqrDist, len, sqrLen, forEach */
+
+/*! exports provided: create, fromMat4, clone, copy, fromValues, set, identity, transpose, invert, adjoint, determinant, multiply, translate, rotate, scale, fromTranslation, fromRotation, fromScaling, fromMat2d, fromQuat, normalFromMat4, projection, str, frob, add, subtract, multiplyScalar, multiplyScalarAndAdd, exactEquals, equals, mul, sub */
+
+/*! exports provided: create, identity, setAxisAngle, getAxisAngle, getAngle, multiply, rotateX, rotateY, rotateZ, calculateW, exp, ln, pow, slerp, random, invert, conjugate, fromMat3, fromEuler, str, clone, fromValues, copy, set, add, mul, scale, dot, lerp, length, len, squaredLength, sqrLen, normalize, exactEquals, equals, rotationTo, sqlerp, setAxes */
+
+/*! exports provided: default */
+
+/*! exports provided: glMatrix, mat2, mat2d, mat3, mat4, quat, quat2, vec2, vec3, vec4 */
+
+/*! gl-matrix */
+
 /*! https://mths.be/punycode v1.3.2 by @mathias */
+
+/*! no static exports found */
+
+/*! pixi.js */
+
+/*! tslib */
+
+/*!**********************!*\
+  !*** ./src/color.ts ***!
+  \**********************/
+
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+
+/*!**********************!*\
+  !*** ./src/model.ts ***!
+  \**********************/
+
+/*!************************!*\
+  !*** ./src/console.ts ***!
+  \************************/
+
+/*!*************************!*\
+  !*** ./src/math/ray.ts ***!
+  \*************************/
+
+/*!**************************!*\
+  !*** ./src/animation.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** ./src/container.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** ./src/math/mat3.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** ./src/math/mat4.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** ./src/math/quat.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** ./src/math/vec3.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** ./src/math/vec4.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** ./src/mesh/mesh.ts ***!
+  \**************************/
+
+/*!***************************!*\
+  !*** ./src/math/plane.ts ***!
+  \***************************/
+
+/*!*****************************!*\
+  !*** ./src/capabilities.ts ***!
+  \*****************************/
+
+/*!******************************!*\
+  !*** ./src/camera/camera.ts ***!
+  \******************************/
+
+/*!******************************!*\
+  !*** ./src/skinning/skin.ts ***!
+  \******************************/
+
+/*!******************************!*\
+  !*** ./src/skybox/skybox.ts ***!
+  \******************************/
+
+/*!******************************!*\
+  !*** ./src/sprite/sprite.ts ***!
+  \******************************/
+
+/*!*******************************!*\
+  !*** ./src/lighting/light.ts ***!
+  \*******************************/
+
+/*!*******************************!*\
+  !*** ./src/skinning/joint.ts ***!
+  \*******************************/
+
+/*!********************************!*\
+  !*** ./src/cubemap/cubemap.ts ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/gltf/gltf-asset.ts ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/instanced-model.ts ***!
+  \********************************/
+
+/*!*********************************!*\
+  !*** ./src/gltf/gltf-parser.ts ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/mesh/mesh-shader.ts ***!
+  \*********************************/
+
+/*!**********************************!*\
+  !*** ./src/material/material.ts ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./src/transform/matrix4.ts ***!
+  \**********************************/
+
+/*!***********************************!*\
+  !*** ./src/gltf/gltf-material.ts ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/loader/gltf-loader.ts ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/picking/picking-id.ts ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/shadow/shadow-math.ts ***!
+  \***********************************/
+
+/*!************************************!*\
+  !*** ./src/gltf/gltf-attribute.ts ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/lighting/light-type.ts ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/mesh/instanced-mesh.ts ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/picking/picking-map.ts ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/transform/transform.ts ***!
+  \************************************/
+
+/*!*************************************!*\
+  !*** ./src/shadow/shadow-filter.ts ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ./src/shadow/shadow-shader.ts ***!
+  \*************************************/
+
+/*!**************************************!*\
+  !*** ./src/loader/cubemap-loader.ts ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/shadow/shadow-quality.ts ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/shadow/shadow-texture.ts ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/shadow/texture-shader.ts ***!
+  \**************************************/
+
+/*!***************************************!*\
+  !*** ./src/resource/cube-resource.ts ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/shadow/shader/shadow.frag ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/shadow/shader/shadow.vert ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/shadow/shadow-renderer.ts ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/shadow/skinning-shader.ts ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/skybox/shader/skybox.frag ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/skybox/shader/skybox.vert ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/skybox/skybox-material.ts ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/sprite/shader/sprite.frag ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/sprite/shader/sprite.vert ***!
+  \***************************************/
+
+/*!****************************************!*\
+  !*** ./src/cubemap/mipmap-resource.ts ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/picking/picking-hitarea.ts ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/resource/array-resource.ts ***!
+  \****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/tslib/tslib.es6.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/cubemap/cubemap-resource.ts ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/gltf/animation/gltf-step.ts ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/lighting/assets/lut-ggx.png ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/picking/shader/picking.frag ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/picking/shader/picking.vert ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/resource/buffer-resource.ts ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/sprite/projection-sprite.ts ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ./src/gltf/animation/gltf-scale.ts ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/loader/gltf-binary-loader.ts ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/shadow/shadow-render-pass.ts ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/texture/texture-transform.ts ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/gltf/animation/gltf-linear.ts ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/pipeline/standard-pipeline.ts ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/transform/matrix-component.ts ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/transform/observable-point.ts ***!
+  \*******************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/mat2.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/mat3.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/mat4.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/quat.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/vec2.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/vec3.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/vec4.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/camera/camera-orbit-control.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/gltf/animation/gltf-channel.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/gltf/animation/gltf-weights.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/loader/shader-source-loader.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/mesh/geometry/cube-geometry.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/mesh/geometry/mesh-geometry.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/mesh/geometry/quad-geometry.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/picking/picking-interaction.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/shadow/shadow-casting-light.ts ***!
+  \********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/index.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/mat2d.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/quat2.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/gltf/animation/gltf-rotation.ts ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/mesh/geometry/plane-geometry.ts ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/resource/base-image-resource.ts ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/sprite/sprite-batch-geometry.ts ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/sprite/sprite-batch-renderer.ts ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/sprite/sprite-billboard-type.ts ***!
+  \*********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/gl-matrix/esm/common.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/gltf/animation/gltf-animation.ts ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/lighting/image-based-lighting.ts ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/lighting/lighting-environment.ts ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/pipeline/material-render-pass.ts ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/shadow/shader/gaussian-blur.frag ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/shadow/shader/gaussian-blur.vert ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/sprite/post-processing-sprite.ts ***!
+  \**********************************************/
+
+/*!************************************************!*\
+  !*** ./src/gltf/animation/gltf-translation.ts ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/transform/observable-quaternion.ts ***!
+  \************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/gltf/animation/gltf-cubic-spline.ts ***!
+  \*************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/gltf/animation/gltf-interpolation.ts ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/material/standard/standard-shader.ts ***!
+  \**************************************************/
+
+/*!***************************************************!*\
+  !*** ./src/material/material-render-sort-type.ts ***!
+  \***************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/material/standard/standard-material.ts ***!
+  \****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/gltf/animation/gltf-spherical-linear.ts ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/material/standard/shader/primitive.vert ***!
+  \*****************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/material/standard/standard-shader-source.ts ***!
+  \*********************************************************/
+
+/*!************************************************************!*\
+  !*** ./src/material/standard/standard-material-factory.ts ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./src/material/standard/standard-material-texture.ts ***!
+  \************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/material/standard/standard-shader-instancing.ts ***!
+  \*************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/material/standard/instanced-standard-material.ts ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/material/standard/shader/metallic-roughness.frag ***!
+  \**************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/material/standard/standard-material-alpha-mode.ts ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/material/standard/standard-material-debug-mode.ts ***!
+  \***************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/material/standard/standard-material-feature-set.ts ***!
+  \****************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./src/material/standard/standard-material-skin-uniforms.ts ***!
+  \******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/material/standard/standard-material-matrix-texture.ts ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/material/standard/standard-material-normal-texture.ts ***!
+  \*******************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./src/material/standard/standard-material-occlusion-texture.ts ***!
+  \**********************************************************************/
+
+/*!*******************************************************************************************!*\
+  !*** external {"commonjs":"pixi.js","commonjs2":"pixi.js","amd":"pixi.js","root":"PIXI"} ***!
+  \*******************************************************************************************/

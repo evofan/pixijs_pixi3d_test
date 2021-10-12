@@ -30,7 +30,7 @@ ticker.autoStart = false;
 // Call this when you are ready for a running shared ticker.
 // ticker.start();
 
-ticker.add(function (time) {
+ticker.add((time) => {
 	// app.renderer;
 	// console.log("render...", time);
 	update(time);
@@ -94,6 +94,8 @@ let model;
 let text1;
 let text2;
 
+let tstart = false;
+
 // v5 loader
 const loader = PIXI.Loader.shared;
 
@@ -131,7 +133,7 @@ text1.y = 10;
  * @param { object } loader object
  * @param { object } res asset data
  */
-function onAssetsLoaded(loader, res) {
+const onAssetsLoaded = (loader, res) => {
 	console.log("onAssetsLoaded()", loader, res);
 	// e {baseUrl: "", progress: 100, loading: false, defaultQueryString: "", _beforeMiddleware: Array(0), …}
 	// {bg_data: t, snow_data: t}
@@ -207,9 +209,12 @@ function onAssetsLoaded(loader, res) {
 
 	// shadow
 	let shadowCastingLight = new PIXI3D.ShadowCastingLight(
-		app.renderer, dirLight, 512, 15, 1, PIXI3D.ShadowQuality.medium);
+		app.renderer, dirLight, { shadowTextureSize: 512, quality: PIXI3D.ShadowQuality.medium });
+	shadowCastingLight.softness = 1;
+	shadowCastingLight.shadowArea = 15;
 
-	let pipeline = PIXI3D.StandardPipeline.from(app.renderer);
+	let pipeline = app.renderer.plugins.pipeline; // 0.9.9
+	// let pipeline = PIXI3D.StandardPipeline.from(app.renderer);
 	// v5 pipeline.shadowRenderPass.lights.push(shadowCastingLight);
 	// v5 pipeline.shadowRenderPass.enableShadows(model, shadowCastingLight);
 	// v6
@@ -270,6 +275,7 @@ function onAssetsLoaded(loader, res) {
 	}
 
 	ticker.start(); // reder start
+	tstart = true;
 
 }
 
@@ -277,24 +283,25 @@ function onAssetsLoaded(loader, res) {
  * app rendering
  * @param { number } time
  */
-function update(time) {
-	for (let i = 0; i < MAX_NUM; i++) {
-		// radian
-		let radian = (angleNums[i] * Math.PI) / 180;
+const update = (time) => {
+	if (tstart) {
+		for (let i = 0; i < MAX_NUM; i++) {
+			// radian
+			let radian = (angleNums[i] * Math.PI) / 180;
 
-		snows[i].x += radiusNums[i] * Math.cos(radian);
+			snows[i].x += radiusNums[i] * Math.cos(radian);
 
-		snows[i].y += 1 * accelNums[i];
-		angleNums[i] += 5;
+			snows[i].y += 1 * accelNums[i];
+			angleNums[i] += 5;
 
-		// +rotation
+			// +rotation
 
-		// moved out of screen
-		if (STAGE_HEIGHT + snows[i].height < snows[i].y) {
-			let xNew = Math.floor(Math.random() * STAGE_WIDTH + 1);
-			snows[i].x = xNew;
-			snows[i].y = -snows[i].height;
+			// moved out of screen
+			if (STAGE_HEIGHT + snows[i].height < snows[i].y) {
+				let xNew = Math.floor(Math.random() * STAGE_WIDTH + 1);
+				snows[i].x = xNew;
+				snows[i].y = -snows[i].height;
+			}
 		}
 	}
-
 }
