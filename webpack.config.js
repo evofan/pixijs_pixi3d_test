@@ -5,6 +5,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
+  mode: "production",
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -20,7 +21,7 @@ module.exports = {
   ],
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist")
+    // path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
@@ -30,5 +31,10 @@ module.exports = {
         use: ['source-map-loader'],
       },
     ]
-  }
+  },
+  performance: { hints: false }
+  // performance: {
+  //  maxEntrypointSize: 1000000,
+  //  maxAssetSize: 1000000,
+  // },
 };
